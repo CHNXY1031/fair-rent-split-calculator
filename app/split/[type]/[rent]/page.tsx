@@ -10,6 +10,7 @@ import {
   RENT_LEVELS,
   SPLIT_TYPES,
 } from "@/lib/pseo";
+import { getAbsoluteUrl } from "@/lib/site";
 
 interface SplitPageProps {
   params: {
@@ -40,17 +41,19 @@ export function generateMetadata({ params }: SplitPageProps): Metadata {
   const formattedRent = formatRent(rent);
   const title = `How to Fairly Split ${formattedRent} Rent for ${splitType.label}`;
   const description = `${splitType.description} Use our free calculator to divide ${formattedRent} monthly rent by bedroom size, amenities, and occupancy.`;
+  const pageUrl = getAbsoluteUrl(`/split/${splitType.slug}/${rent}`);
 
   return {
     title,
     description,
     alternates: {
-      canonical: `/split/${splitType.slug}/${rent}`,
+      canonical: pageUrl,
     },
     openGraph: {
       title,
       description,
       type: "website",
+      url: pageUrl,
     },
   };
 }
@@ -92,8 +95,7 @@ export default function SplitPage({ params }: SplitPageProps) {
         "Usually not. A couple uses one private bedroom but two shares of the kitchen, living room, and other common areas. This model charges one weighted bedroom share plus two common-area shares.",
     },
   ];
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fairrentsplit.com";
-  const pageUrl = `${baseUrl}/split/${splitType.slug}/${rent}`;
+  const pageUrl = getAbsoluteUrl(`/split/${splitType.slug}/${rent}`);
   const jsonLd = [
     {
       "@context": "https://schema.org",

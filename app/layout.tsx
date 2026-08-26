@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import Link from "next/link";
 import { Scale } from "lucide-react";
+import { BASE_URL } from "@/lib/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -16,22 +17,24 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fairrentsplit.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "Fair Roommate Rent Split Calculator",
     template: "%s | Fair Rent Split",
   },
   description:
     "Split rent fairly by room size, private bathroom, premium features, and number of occupants. Free, instant, and easy to share.",
+  alternates: {
+    canonical: BASE_URL,
+  },
   openGraph: {
     type: "website",
     siteName: "Fair Rent Split",
     title: "Fair Roommate Rent Split Calculator",
     description:
       "A transparent rent calculator for roommates, couples, and uneven bedrooms.",
+    url: BASE_URL,
   },
   twitter: {
     card: "summary_large_image",

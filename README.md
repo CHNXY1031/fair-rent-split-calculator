@@ -28,4 +28,4 @@ npm run build
 - 25% of rent is the common-area pool, allocated by occupant count.
 - Final shares are allocated in whole cents with a largest-remainder adjustment so they always sum exactly to total rent.
 
-Set `NEXT_PUBLIC_SITE_URL` to the production origin before deployment. If it is absent or invalid, the sitemap falls back to `https://fairrentsplit.com`.
+The production origin is fixed to `https://fair-rent-split-calculator.vercel.app` so sitemap, canonical metadata, Open Graph metadata, robots, and structured data always use the same domain.
