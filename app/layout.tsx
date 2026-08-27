@@ -75,7 +75,7 @@ export default function RootLayout({
           <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-8 text-sm text-ink/65 sm:flex-row sm:items-center sm:justify-between sm:px-8">
             <p>Built for honest roommate conversations.</p>
             <p>Estimates are a starting point—agree together before signing.</p>
-            <a href="https://uptime-pulse-saas.vercel.app/?utm_source=fair-rent-split-calculator&amp;utm_medium=referral&amp;utm_campaign=protected_by" target="_blank" rel="noopener noreferrer" className="text-xs text-ink/45 underline decoration-ink/20 underline-offset-4 transition hover:text-ink">Protected by UptimePulse — Free Website &amp; SSL Monitor</a>
+            <a href="https://uptime-pulse-saas.vercel.app/?utm_source=fair-rent-split-calculator&amp;utm_medium=referral&amp;utm_campaign=protected_by" target="_blank" rel="noopener noreferrer nofollow" className="text-xs text-ink/45 underline decoration-ink/20 underline-offset-4 transition hover:text-ink">Protected by UptimePulse — Free Website &amp; SSL Monitor</a>
           </div>
         </footer>
       </body>
